@@ -21,8 +21,6 @@
             "description": "Customer Name provided by the ThreatX SOC",
             "data_type": "string",
             "required": true,
-            "value_list": [],
-            "default": "",
             "order": 0
         },
         "api_key": {
@@ -60,8 +58,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -129,8 +125,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -198,8 +192,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -267,8 +259,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -336,8 +326,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -405,8 +393,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -474,8 +460,6 @@
                     "contains": [
                         "threatx entity name"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 },
                 "entity_id": {
@@ -486,8 +470,6 @@
                     "contains": [
                         "threatx entity id"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 1
                 },
                 "entity_ip": {
@@ -498,8 +480,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 2
                 }
             },
@@ -733,8 +713,6 @@
                     "contains": [
                         "threatx entity name"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 },
                 "entity_id": {
@@ -745,8 +723,6 @@
                     "contains": [
                         "threatx entity id"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 1
                 },
                 "entity_ip": {
@@ -757,8 +733,6 @@
                     "contains": [
                         "ip"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 2
                 }
             },
@@ -875,8 +849,6 @@
                     "contains": [
                         "threatx entity id"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -965,8 +937,6 @@
                     "contains": [
                         "threatx entity id"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 }
             },
@@ -1062,8 +1032,6 @@
                     "contains": [
                         "threatx entity id"
                     ],
-                    "value_list": [],
-                    "default": "",
                     "order": 0
                 },
                 "content": {
@@ -1071,8 +1039,6 @@
                     "data_type": "string",
                     "required": true,
                     "primary": true,
-                    "value_list": [],
-                    "default": "",
                     "order": 1
                 }
             },
