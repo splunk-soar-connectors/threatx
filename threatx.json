@@ -4,8 +4,8 @@
     "description": "This app implements investigative and enforcement actions on the ThreatX NG WAF platform.",
     "type": "network security",
     "product_vendor": "ThreatX",
-    "logo": "threatx.png",
-    "logo_dark": "threatx_dark.png",
+    "logo": "logo_threatx.svg",
+    "logo_dark": "logo_threatx_dark.svg",
     "product_name": "WAF",
     "product_version_regex": ".*",
     "publisher": "ThreatX",
@@ -18,7 +18,8 @@
     "app_wizard_version": "1.0.0",
     "configuration": {
         "customer_name": {
-            "description": "Customer Name provided by the ThreatX SOC",
+            "description": "Customer Name",
+            "verbose": "Customer Name provided by the ThreatX SOC",
             "data_type": "string",
             "required": true,
             "value_list": [],
@@ -26,7 +27,8 @@
             "order": 0
         },
         "api_key": {
-            "description": "API Key provided by the ThreatX SOC",
+            "description": "API Key",
+            "verbose": "API Key provided by the ThreatX SOC",
             "data_type": "password",
             "required": true,
             "order": 1
@@ -73,7 +75,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -82,6 +84,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -96,16 +102,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blocklist entry for ip 12.12.12.12 added"
+                        "Blocklist entry for ip 8.8.8.8 added"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -142,7 +154,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -151,6 +163,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -165,16 +181,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blocklist entry for ip 12.12.12.12 removed"
+                        "Blocklist entry for ip 8.8.8.8 removed"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -211,7 +233,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -220,6 +242,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -234,16 +260,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blacklist entry for ip 12.12.12.12 added"
+                        "Blacklist entry for ip 8.8.8.8 added"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -280,7 +312,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -289,6 +321,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -303,16 +339,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blacklist entry for ip 12.12.12.12 removed"
+                        "Blacklist entry for ip 8.8.8.8 removed"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -349,7 +391,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -358,6 +400,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -372,16 +418,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Whitelist entry for ip 12.12.12.12 added"
+                        "Whitelist entry for ip 8.8.8.8 added"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -418,7 +470,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "12.12.12.12"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 0
@@ -427,6 +479,10 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_name": "Status",
+                    "example_values": [
+                        "success",
+                        "failed"
+                    ],
                     "column_order": 1
                 },
                 {
@@ -441,16 +497,22 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Whitelist entry for ip 12.12.12.12 removed"
+                        "Whitelist entry for ip 8.8.8.8 removed"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "render": {
@@ -511,7 +573,7 @@
                         "threatx entity name"
                     ],
                     "example_values": [
-                        "PatronizingDelahaye"
+                        "test"
                     ],
                     "column_name": "Entity Name",
                     "column_order": 0
@@ -535,7 +597,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "1.2.3.4"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 2
@@ -561,7 +623,8 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "example_values": [
-                        "success"
+                        "success",
+                        "failed"
                     ]
                 },
                 {
@@ -688,7 +751,7 @@
                         "threatx entity name"
                     ],
                     "example_values": [
-                        "PatronizingDelahaye"
+                        "test"
                     ]
                 },
                 {
@@ -698,7 +761,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "1.2.3.4"
+                        "8.8.8.8"
                     ]
                 },
                 {
@@ -770,7 +833,7 @@
                         "threatx entity name"
                     ],
                     "example_values": [
-                        "PatronizingDelahaye"
+                        "test"
                     ],
                     "column_name": "Entity Name",
                     "column_order": 0
@@ -794,7 +857,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "1.2.3.4"
+                        "8.8.8.8"
                     ],
                     "column_name": "IP",
                     "column_order": 2
@@ -820,7 +883,8 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "example_values": [
-                        "success"
+                        "success",
+                        "failed"
                     ]
                 },
                 {
@@ -830,7 +894,7 @@
                         "threatx entity name"
                     ],
                     "example_values": [
-                        "PatronizingDelahaye"
+                        "test"
                     ]
                 },
                 {
@@ -840,7 +904,7 @@
                         "ip"
                     ],
                     "example_values": [
-                        "1.2.3.4"
+                        "8.8.8.8"
                     ]
                 },
                 {
@@ -851,6 +915,20 @@
                     ],
                     "example_values": [
                         "329415927439353054"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
                     ]
                 }
             ],
@@ -930,7 +1008,8 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "example_values": [
-                        "success"
+                        "success",
+                        "failed"
                     ]
                 },
                 {
@@ -941,6 +1020,20 @@
                     ],
                     "example_values": [
                         "329415927439353054"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
                     ]
                 }
             ],
@@ -984,7 +1077,7 @@
                     "data_path": "action_result.data.*.username",
                     "data_type": "string",
                     "example_values": [
-                        "user@acmecorp.com"
+                        "test@gmail.com"
                     ],
                     "contains": [
                         "email"
@@ -1027,7 +1120,8 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "example_values": [
-                        "success"
+                        "success",
+                        "failed"
                     ]
                 },
                 {
@@ -1038,6 +1132,20 @@
                     ],
                     "example_values": [
                         "329415927439353054"
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
+                },
+                {
+                    "data_path": "summary.total_objects_successful",
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
                     ]
                 }
             ],
@@ -1102,7 +1210,8 @@
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "example_values": [
-                        "success"
+                        "success",
+                        "failed"
                     ],
                     "column_name": "Status",
                     "column_order": 2
@@ -1117,11 +1226,17 @@
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.Ok",

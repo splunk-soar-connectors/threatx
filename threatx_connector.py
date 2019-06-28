@@ -370,7 +370,6 @@ class ThreatxConnector(BaseConnector):
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _handle_get_entities(self, param):
-
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
         # Add an action result object to self (BaseConnector) to represent the action for this param
@@ -627,7 +626,6 @@ class ThreatxConnector(BaseConnector):
         return ret_val
 
     def initialize(self):
-
         self.save_progress('Initializing request...')
 
         def _txlogin():
@@ -636,15 +634,16 @@ class ThreatxConnector(BaseConnector):
                 'command': 'login',
                 'api_token': config['api_key']
             }
-
-            r = requests.post(_url, json=login_payload, timeout=10)
-
+            try:
+                r = requests.post(_url, json=login_payload, timeout=10)
+            except Exception as e:
+                return self.set_status(phantom.APP_ERROR, status_message="Error : {}".format(str(e)))
             # error check
             if r.status_code != 200:
                 self._state['token_expires'] = None
                 self._state['session_token'] = None
                 message = 'Received status code ' + str(r.status_code) + ' from server during login. Clearing session token cache.'
-                return self.set_status_save_progress(phantom.APP_ERROR, status_message=message)
+                return self.set_status(phantom.APP_ERROR, status_message=message)
 
             response = r.json()
 
@@ -653,12 +652,12 @@ class ThreatxConnector(BaseConnector):
                     self._state['token_expires'] = None
                     self._state['session_token'] = None
                     message = 'Invalid credentials during login. Clearing session token cache.'
-                    return self.set_status_save_progress(phantom.APP_ERROR, status_message=message)
+                    return self.set_status(phantom.APP_ERROR, status_message=message)
             else:
                 self._state['token_expires'] = None
                 self._state['session_token'] = None
                 message = 'Cannot parse login response. Clearing session token cache.'
-                return self.set_status_save_progress(phantom.APP_ERROR, status_message=message)
+                return self.set_status(phantom.APP_ERROR, status_message=message)
 
             # set the API Session Token and reset the API Session Token expiration timer for 10 minutes
             self._state['session_token'] = response['Ok']['token']
