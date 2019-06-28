@@ -197,7 +197,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "new blacklist ip",
+            "action": "blacklist ip",
             "identifier": "new_blacklist_ip",
             "description": "Add an IP to the Blacklist",
             "verbose": "This action adds an IP to the Blacklist as a permanent block.",
@@ -274,7 +274,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "remove blacklist ip",
+            "action": "blacklist ip",
             "identifier": "remove_blacklist_ip",
             "description": "Remove an IP from the Blacklist",
             "verbose": "This action removes an IP from the Blacklist so it will no longer be blocked.",
@@ -351,7 +351,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "new whitelist ip",
+            "action": "whitelist ip",
             "identifier": "new_whitelist_ip",
             "description": "Add an IP to the Whitelist",
             "verbose": "This action adds an IP to the Whitelist so it will never be blocked.",
@@ -428,7 +428,7 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "remove whitelist ip",
+            "action": "whitelist ip",
             "identifier": "remove_whitelist_ip",
             "description": "Remove an IP from the Whitelist",
             "verbose": "This action removes an IP from the Whitelist so it can become blocked.",
