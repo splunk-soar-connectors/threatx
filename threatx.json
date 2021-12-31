@@ -197,15 +197,15 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "blacklist ip",
-            "identifier": "new_blacklist_ip",
-            "description": "Add an IP to the Blacklist",
-            "verbose": "This action adds an IP to the Blacklist as a permanent block.",
+            "action": "add denylist ip",
+            "identifier": "new_denylist_ip",
+            "description": "Add an IP to the Denylist",
+            "verbose": "This action adds an IP to the Denylist as a permanent block.",
             "type": "contain",
             "read_only": false,
             "parameters": {
                 "ip": {
-                    "description": "IP to add to the Blacklist",
+                    "description": "IP to add to the Denylist",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -250,7 +250,7 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blacklist entry for ip 8.8.8.8 added"
+                        "Denylist entry for ip 8.8.8.8 added"
                     ]
                 },
                 {
@@ -274,15 +274,15 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "blacklist ip",
-            "identifier": "remove_blacklist_ip",
-            "description": "Remove an IP from the Blacklist",
-            "verbose": "This action removes an IP from the Blacklist so it will no longer be blocked.",
+            "action": "remove denylist ip",
+            "identifier": "remove_denylist_ip",
+            "description": "Remove an IP from the Denylist",
+            "verbose": "This action removes an IP from the Denylist so it will no longer be blocked.",
             "type": "correct",
             "read_only": false,
             "parameters": {
                 "ip": {
-                    "description": "IP to remove from the Blacklist",
+                    "description": "IP to remove from the Denylist",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -327,7 +327,7 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Blacklist entry for ip 8.8.8.8 removed"
+                        "Denylist entry for ip 8.8.8.8 removed"
                     ]
                 },
                 {
@@ -351,15 +351,15 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "whitelist ip",
-            "identifier": "new_whitelist_ip",
-            "description": "Add an IP to the Whitelist",
-            "verbose": "This action adds an IP to the Whitelist so it will never be blocked.",
+            "action": "add allowlist ip",
+            "identifier": "new_allowlist_ip",
+            "description": "Add an IP to the Allowlist",
+            "verbose": "This action adds an IP to the Allowlist so it will never be blocked.",
             "type": "correct",
             "read_only": false,
             "parameters": {
                 "ip": {
-                    "description": "IP to add to the Whitelist",
+                    "description": "IP to add to the Allowlist",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -404,7 +404,7 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Whitelist entry for ip 8.8.8.8 added"
+                        "Allowlist entry for ip 8.8.8.8 added"
                     ]
                 },
                 {
@@ -428,15 +428,15 @@
             "versions": "EQ(*)"
         },
         {
-            "action": "whitelist ip",
-            "identifier": "remove_whitelist_ip",
-            "description": "Remove an IP from the Whitelist",
-            "verbose": "This action removes an IP from the Whitelist so it can become blocked.",
+            "action": "remove allowlist ip",
+            "identifier": "remove_allowlist_ip",
+            "description": "Remove an IP from the Allowlist",
+            "verbose": "This action removes an IP from the Allowlist so it can become blocked.",
             "type": "correct",
             "read_only": false,
             "parameters": {
                 "ip": {
-                    "description": "IP to remove from the Whitelist",
+                    "description": "IP to remove from the Allowlist",
                     "data_type": "string",
                     "required": true,
                     "primary": true,
@@ -481,7 +481,7 @@
                     "data_path": "action_result.data.*.Ok",
                     "data_type": "string",
                     "example_values": [
-                        "Whitelist entry for ip 8.8.8.8 removed"
+                        "Allowlist entry for ip 8.8.8.8 removed"
                     ]
                 },
                 {
