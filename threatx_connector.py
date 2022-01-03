@@ -1,12 +1,13 @@
+import ipaddress
+import json
 import time
 from operator import itemgetter
-import ipaddress
+
 import phantom.app as phantom
-from phantom.base_connector import BaseConnector
-from phantom.action_result import ActionResult
 import requests
-import json
 from bs4 import BeautifulSoup
+from phantom.action_result import ActionResult
+from phantom.base_connector import BaseConnector
 
 # ThreatX Phantom App
 # kelly.brazil@threatx.com
@@ -233,7 +234,7 @@ class ThreatxConnector(BaseConnector):
         # BaseConnector will create a textual message based off of the summary dictionary
         return action_result.set_status(phantom.APP_SUCCESS)
 
-    def _handle_new_blacklist_ip(self, param):
+    def _handle_new_denylist_ip(self, param):
 
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
@@ -269,7 +270,7 @@ class ThreatxConnector(BaseConnector):
         # BaseConnector will create a textual message based off of the summary dictionary
         return action_result.set_status(phantom.APP_SUCCESS)
 
-    def _handle_remove_blacklist_ip(self, param):
+    def _handle_remove_denylist_ip(self, param):
 
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
@@ -301,7 +302,7 @@ class ThreatxConnector(BaseConnector):
         # BaseConnector will create a textual message based off of the summary dictionary
         return action_result.set_status(phantom.APP_SUCCESS)
 
-    def _handle_new_whitelist_ip(self, param):
+    def _handle_new_allowlist_ip(self, param):
 
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
@@ -337,7 +338,7 @@ class ThreatxConnector(BaseConnector):
         # BaseConnector will create a textual message based off of the summary dictionary
         return action_result.set_status(phantom.APP_SUCCESS)
 
-    def _handle_remove_whitelist_ip(self, param):
+    def _handle_remove_allowlist_ip(self, param):
 
         self.save_progress("In action handler for: {0}".format(self.get_action_identifier()))
 
@@ -596,17 +597,17 @@ class ThreatxConnector(BaseConnector):
         elif action_id == 'unblock_ip':
             ret_val = self._handle_unblock_ip(param)
 
-        elif action_id == 'new_blacklist_ip':
-            ret_val = self._handle_new_blacklist_ip(param)
+        elif action_id == 'new_denylist_ip':
+            ret_val = self._handle_new_denylist_ip(param)
 
-        elif action_id == 'remove_blacklist_ip':
-            ret_val = self._handle_remove_blacklist_ip(param)
+        elif action_id == 'remove_denylist_ip':
+            ret_val = self._handle_remove_denylist_ip(param)
 
-        elif action_id == 'new_whitelist_ip':
-            ret_val = self._handle_new_whitelist_ip(param)
+        elif action_id == 'new_allowlist_ip':
+            ret_val = self._handle_new_allowlist_ip(param)
 
-        elif action_id == 'remove_whitelist_ip':
-            ret_val = self._handle_remove_whitelist_ip(param)
+        elif action_id == 'remove_allowlist_ip':
+            ret_val = self._handle_remove_allowlist_ip(param)
 
         elif action_id == 'get_entities':
             ret_val = self._handle_get_entities(param)
@@ -706,8 +707,9 @@ class ThreatxConnector(BaseConnector):
 
 if __name__ == '__main__':
 
-    import pudb
     import argparse
+
+    import pudb
 
     pudb.set_trace()
 
@@ -733,7 +735,7 @@ if __name__ == '__main__':
         try:
             login_url = ThreatxConnector._get_phantom_base_url() + '/login'
 
-            print ("Accessing the Login page")
+            print("Accessing the Login page")
             r = requests.get(login_url, verify=False)
             csrftoken = r.cookies['csrftoken']
 
@@ -746,11 +748,11 @@ if __name__ == '__main__':
             headers['Cookie'] = 'csrftoken=' + csrftoken
             headers['Referer'] = login_url
 
-            print ("Logging into Platform to get the session id")
+            print("Logging into Platform to get the session id")
             r2 = requests.post(login_url, verify=False, data=data, headers=headers)
             session_id = r2.cookies['sessionid']
         except Exception as e:
-            print ("Unable to get session id from the platform. Error: " + str(e))
+            print("Unable to get session id from the platform. Error: " + str(e))
             exit(1)
 
     with open(args.input_test_json) as f:
@@ -766,6 +768,6 @@ if __name__ == '__main__':
             connector._set_csrf_info(csrftoken, headers['Referer'])
 
         ret_val = connector._handle_action(json.dumps(in_json), None)
-        print (json.dumps(json.loads(ret_val), indent=4))
+        print(json.dumps(json.loads(ret_val), indent=4))
 
     exit(0)
